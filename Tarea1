@@ -1,0 +1,112 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+#define ALPHA 1.24
+#define Pi 3.1416
+
+
+unsigned int var;
+
+void calcParabolico(void);
+void print_results(void);
+void otros_calculos(void);
+
+char  x, y, vx,  vy;
+
+int main()
+{
+    unsigned short int des = -5;
+    int lib_func1();
+    var = 100;
+
+    var += des;
+
+    //Calculando los parametros en la Tierra con g = 9.8 m/s*s
+    //calcParabolico();
+    //print_results();
+
+    //Calculando los parametros en la Luna con g = 1.62 m/s*s
+    //calcParabolico();
+    //print_results();
+    otros_calculos();
+
+    return 0;
+}
+
+void calcParabolico(void)
+{
+    const float g = 9.8;
+    char vx0, vy0,v0, t, y0;
+    
+    vx0 = v0 * cos(ALPHA);
+    vy0 = v0 * sin(ALPHA);
+
+    vx = vx0;
+    vy = vy0-g*t;
+
+    x = vx*t;
+    y = y0+vy0*t-(g*pow(t,2)/2);
+}
+
+void print_results(void)
+{
+    std::cout<<"Los resultados del calculo parabolico son: "<<std::endl;
+    std::cout<<"Velocidad en x: "<<vx<<", ";
+    std::cout<<"Velocidad en y: "<<vy<<", ";
+    std::cout<<"Posicion en x: "<<x<<", ";
+    std::cout<<"Posicion en y: "<<y<<std::endl;
+}
+
+
+void otros_calculos(void)
+{
+    /* Serie simple (1/[(x^2) + (x+1)]) para x entre 1 y 199*/
+    
+    float s;
+    for(int x=1; x<200; x++)
+    {
+        s=(1/(pow(x,2)+(x+1)));
+        
+        cout<<"El valor de s es: "<<s<<"\n";
+        
+    }
+    
+    
+
+    /* Volumen de la esfera */
+    
+    double vol;
+    float r;
+    
+    vol = (4/3)*Pi*pow(r,3);
+    
+    
+    /* Raices de la ecuacion (3*x^2) + (5*x) + 8  = 0 */
+    
+    double ecupo;
+    double ecune;
+    
+    ecupo= (-5+sqrt(pow(5,2)-4*(3*8)))/(2*3);
+    ecune= (-5-sqrt(pow(5,2)-4*(3*8)))/(2*3);
+    cout<<"El valor de la raiz positiva es: "<<ecupo<<"\n";
+    cout<<"El valor de la raiz negativa es: "<<ecune<<"\n";
+
+    /* Impedancia tipica de una linea de transmision
+     * Z0 = [(R+wL)/(G+wC)]^(1/2)
+     * w = frecuencia angular = 2*pi*f, f = 10kHz */
+     
+     float Z0, ;
+     
+        //Agregue aqui la formula
+
+    /* Constante de fase de una fibra optica
+     * B = {[((a^2)-(b^2))*c+(b^2)]^(1/2)}*betacero
+     * betacero = w*(mu*epsi)^(1/2)
+     * w = frecuencia angular = 2*pi*f, f = 5GHz
+     * mu = 0.00000125664
+     * epsi = 0.00000000000088542  */
+
+}
+
