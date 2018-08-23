@@ -1,0 +1,128 @@
+
+#include <iostream>
+
+/*1. Declare una cadena de caracteres llamada my_string utilizando un puntero */
+
+//std::cout<<"Cadena my_string: ";
+//std::cout<< /*Aqui va la cadena my_string */ <<std::endl;
+
+/*2. Declare una estructura global con 6 miembros de distinto tipo y en este orden (con sus miembros inicializados):
+* int
+* char
+* float
+* char
+* double
+ * int
+ */
+
+/* Declare otra estructura global con 6 miembros de distinto tipo y en este orden (con sus miembros inicializados):
+ * int
+ * int
+ * float
+ * char
+ * char
+ * double
+ */
+
+//Declare punteros a cada una de las estructuras e imprima en pantalla el valor de sus miembros haciendo uso
+//del operador ->
+//Luego imprima de nuevo el valor de los miembros de la estructura pero esta vez haga uso de "type casting",
+//operadores y aritmetica de punteros
+//Calcule el tamaC1o de cada estructura con la funcion sizeof() y explique en un comentario sus observaciones
+//acerca del resultado obtenido respecto a los tamanios de las estructuras
+
+/*3.Agregue a la funcion foo_function() un arreglo unidimensional del tipo y del tamanio que ud prefiera.
+ * Declare un puntero al arreglo y luego agregue las lineas de codigo necesarias para lograr que cada vez que
+ * se haga un llamado a la funcion foo_function() dentro de la funcion main se imprima un elemento del arreglo
+ * (en el orden que estan en el arreglo) con ayuda de la aritmetica de punteros.
+ */
+
+/* Enlaces de internet utiles:
+ * http://c.conclase.net/curso/index.php?cap=011
+ * http://c.conclase.net/curso/index.php?cap=011b#STR_sizeof
+ * https://stackoverflow.com/questions/8657776/pointer-arithmetic-with-structures
+ * https://stackoverflow.com/questions/119123/why-isnt-sizeof-for-a-struct-equal-to-the-sum-of-sizeof-of-each-member
+ * http://www.catb.org/esr/structure-packing/
+ * https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/
+ */
+
+void foo_function(void); //Esta declaracion dejela tal y como esta
+
+    //punto 2
+
+struct estructur_1
+
+{
+    int var1 = 0;
+    char var2 = 0;
+    float var3 = 0;
+    char var4 = 0;
+    double var5 = 0;
+    int var6 = 0;
+    
+}varstruct1;
+
+struct estructur_2
+{
+    int var1 = 0;
+    int var2= 0;    
+    float var3= 0;
+    char var4= 0;
+    char var5= 0;
+    double var6= 0;
+    
+}varstruct2;
+
+int main()
+{
+	
+	//punto 1
+	
+	char *my_string = "lenguajes de programacion";
+	std::cout<<"mi cadena de caracteres es:" << my_string <<std::endl;
+	
+	
+	//continuacion del punto 2
+	
+	estructur_1 *ptr1=&varstruct1;
+	
+	std::cout<<"Valor del miembro uno es:" << ptr1->var1<<"\n"; 
+	std::cout<<"Valor del miembro dos es:" << ptr1->var2<<"\n";
+	std::cout<<"Valor del miembro tres es:" << ptr1->var3<<"\n";
+	std::cout<<"Valor del miembro cuatro es:" << ptr1->var4<<"\n";
+	std::cout<<"Valor del miembro cinco es:" << ptr1->var5<<"\n";
+	std::cout<<"Valor del miembro seis es:" << ptr1->var6<<"\n"<<"\n";
+	
+	
+		estructur_2 *ptr2=&varstruct2;
+	
+	std::cout<<"Valor del miembro uno es:" << ptr2->var1<<"\n"; 
+	std::cout<<"Valor del miembro dos es:" << ptr2->var2<<"\n";
+	std::cout<<"Valor del miembro tres es:" << ptr2->var3<<"\n";
+	std::cout<<"Valor del miembro cuatro es:" << ptr2->var4<<"\n";
+	std::cout<<"Valor del miembro cinco es:" << ptr2->var5<<"\n";
+	std::cout<<"Valor del miembro seis es:" << ptr2->var6<<"\n";
+	
+
+	
+	
+	
+	 //Aqui puede agregar mas llamadas a function1.....
+    foo_function();
+        
+
+
+
+    return 0;
+}
+
+
+
+
+
+void foo_function(void)
+{
+	//Su codigo aqui
+    //std::cout<<<<std::endl;
+    //Su codigo aqui tambien si quiere
+}
