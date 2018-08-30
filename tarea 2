@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 /*1. Declare una cadena de caracteres llamada my_string utilizando un puntero */
@@ -54,22 +53,22 @@ struct estructur_1
 
 {
     int var1 = 0;
-    char var2 = 0;
-    float var3 = 0;
-    char var4 = 0;
-    double var5 = 0;
-    int var6 = 0;
+    char var2 = 'v';
+    float var3 = 1.2;
+    char var4 = 'x';
+    double var5 = 2.22;
+    int var6 = 3;
     
 }varstruct1;
 
 struct estructur_2
 {
     int var1 = 0;
-    int var2= 0;    
-    float var3= 0;
-    char var4= 0;
-    char var5= 0;
-    double var6= 0;
+    int var2= 1;    
+    float var3= 2.1;
+    char var4= 'y';
+    char var5= 'z';
+    double var6= 3.22;
     
 }varstruct2;
 
@@ -82,7 +81,7 @@ int main()
 	std::cout<<"mi cadena de caracteres es:" << my_string <<std::endl;
 	
 	
-	//continuacion del punto 2
+	//continuacion del punto 2----declaracion de punteros a cada estructura
 	
 	estructur_1 *ptr1=&varstruct1;
 	
@@ -101,8 +100,29 @@ int main()
 	std::cout<<"Valor del miembro tres es:" << ptr2->var3<<"\n";
 	std::cout<<"Valor del miembro cuatro es:" << ptr2->var4<<"\n";
 	std::cout<<"Valor del miembro cinco es:" << ptr2->var5<<"\n";
-	std::cout<<"Valor del miembro seis es:" << ptr2->var6<<"\n";
+	std::cout<<"Valor del miembro seis es:" << ptr2->var6<<"\n"<<"\n";
 	
+	
+    //type casting 
+	
+	std::cout<<"Valor del miembro uno es:" << *((int*)ptr1)<<"\n"; 
+	std::cout<<"Valor del miembro dos es:" << *((char*)ptr1+4)<<"\n";
+	std::cout<<"Valor del miembro tres es:" << *((float*)ptr1+2)<<"\n";
+	std::cout<<"Valor del miembro cuatro es:" << *((char*)ptr1+12)<<"\n";
+	std::cout<<"Valor del miembro cinco es:" << *((double*)ptr1+2)<<"\n";
+	std::cout<<"Valor del miembro seis es:" << *((int*)ptr1+6)<<"\n"<<"\n";
+	
+	
+	std::cout<<"Valor del miembro uno es:" << *((int*)ptr2)<<"\n"; 
+	std::cout<<"Valor del miembro dos es:" << *((int*)ptr2+1)<<"\n";
+	std::cout<<"Valor del miembro tres es:" << *((float*)ptr2+2)<<"\n";
+	std::cout<<"Valor del miembro cuatro es:" << *((char*)ptr2+12)<<"\n";
+	std::cout<<"Valor del miembro cinco es:" << *((char*)ptr2+13)<<"\n";
+	std::cout<<"Valor del miembro seis es:" << *((double*)ptr2+2)<<"\n";
+	
+	
+
+
 
 	
 	
